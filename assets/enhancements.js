@@ -2,11 +2,11 @@
 'use strict';
 document.addEventListener('keydown', event => {
   if (!(event.ctrlKey || event.metaKey) || event.key.toLowerCase() !== 'k') return;
-  const input = document.querySelector('input[aria-label="搜索消息"]');
+  const input = document.querySelector('input[type="search"][placeholder="搜索消息"]');
   if (!input) return;
   event.preventDefault();
   const sidebar = input.closest('aside');
-  if (sidebar && sidebar.getBoundingClientRect().right <= 1) {
+  if (sidebar && (sidebar.getBoundingClientRect().right <= 1 || getComputedStyle(sidebar).visibility === 'hidden')) {
     document.querySelector('button[aria-label="切换侧栏"]')?.click();
   }
   requestAnimationFrame(() => { input.focus(); input.select(); });
