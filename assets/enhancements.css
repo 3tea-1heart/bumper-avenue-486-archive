@@ -1,0 +1,5 @@
+/* Preserve QCE's layout, palette, typography and bubble styling. */
+.archive-load-error { margin: 2rem; font: 14px/1.8 system-ui,sans-serif; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
